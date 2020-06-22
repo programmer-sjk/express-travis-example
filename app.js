@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var calcRouter = require('./routes/calc');
 
 var app = express();
 
@@ -18,6 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/calc', calcRouter);
 app.use('/users', usersRouter);
 
 app.use(function(req, res, next) {
@@ -25,7 +27,7 @@ app.use(function(req, res, next) {
 });
 
 app.listen(3000, () => {
-    console.log('server is listening 300 port')
+    console.log('server is listening 3000 port')
 })
 
 
