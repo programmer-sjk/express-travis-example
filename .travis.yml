@@ -6,7 +6,7 @@ before_script:
 notifications:
   email:
     recipients:
-      - tjwjdrnr666@naver.com
-      #- wjdrnr6662@gmail.com
+      #- tjwjdrnr666@naver.com
+      - wjdrnr6662@gmail.com
     #on_success: never # default: change
     #on_failure: always # default: always
