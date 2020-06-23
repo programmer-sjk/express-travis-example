@@ -11,7 +11,7 @@ suite('[TDD] calculator test', () => {
 
     test('minus two number test', () => {
         const ret = calc.minus(3,2);
-        assert.equal(ret, 0);
+        assert.equal(ret, 1);
     })
 
     test('multiple two number test', () => {
