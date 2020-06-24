@@ -1,12 +1,15 @@
 language: node_js
 node_js:
-  - lts/*
+- lts/*
 before_script:
-  - npm install
+- npm install
 notifications:
   email:
-    recipients:
-      - tjwjdrnr666@naver.com
-      - wjdrnr6662@gmail.com
-    on_success: always # default: change
-    #on_failure: always # default: always
+    on_success: always
+deploy:
+  provider: script
+  script: bash docker_push
+env:
+  global:
+  - DOCKER_USER=sjk5766
+  - secure: I87q0F+5I9Kx/IH/ZMT1zQQlShAtNkdYQ5fxoUuPDgGOIcDfUhkXj5XWgO7NFkIthUo/n/u3b9w3YjmjG/YlTptjVPv7YaP2Guvc4eFs/ynx1P/jEmNby1OUgj26dy9pOs++anTog7KtIqDt7UqPX6oOVv556EbIl8bJoCaByLyEyH3KMSq87KWQu4yaL6F05lKAxPjLKqt/jaRliDS7Dq61CPQJllMt1d1zU94ZMWgJBztUW+agj+njwIOIldEPhn80OgAR5e5qnV/Dpk45sdiZbs2WKXWGghl4jVGuB8rdL0xteTxDlbZHP2sGFCyMduuZIgmhDaUc8LlqhWdWYFLFduGbYlI9PO2rNKSc4nZzIYbwljv8W0pkACe9O6ucFpXTK3pfVd7B9PHtHWu5fAVdhBeyK9TOi9106XDU/+3MCLZSS+aFfICDNFvmhj4QZjext1a1LpXBR22B4Fk7rSNUrO+XXic53rQ46l3DjP2qTnSaZOYS53Wjll5pIyxbXQZZMpMOGdQXgfB0jics2bYeVW7H67Br1xik9lQWakCpSr15uioVrfb90lq2926Fv/qZNEz3Lp2OAdvRbEq4PsGrq+hjoJeFORVmv2IXSsof43OZ7MW+1vPOIFEtGfB0d4wIZQ6I4rPmYHNcq/8qAKDYFUwnowxZpiB7MzB2Hds=
