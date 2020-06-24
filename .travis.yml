@@ -6,10 +6,10 @@ before_script:
 notifications:
   email:
     on_success: always
-deploy:
-  provider: script
-  script: bash docker_push.sh
-  skip_cleanup: true
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+  - docker build -t sjk5766/express:0.0.1 .
+  - docker push sjk5766/express:0.0.1
 env:
   global:
   - DOCKER_USER=sjk5766
