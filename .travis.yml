@@ -9,6 +9,7 @@ notifications:
 deploy:
   provider: script
   script: bash docker_push.sh
+  skip_cleanup: true
 env:
   global:
   - DOCKER_USER=sjk5766
