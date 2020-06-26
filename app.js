@@ -26,7 +26,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('server is listening 3000 port')
 })
 
