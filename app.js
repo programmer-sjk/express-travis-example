@@ -1,41 +1,5 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var calcRouter = require('./routes/calc');
-
-var app = express();
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/calc', calcRouter);
-app.use('/users', usersRouter);
-
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-app.listen(process.env.PORT || 3000, () => {
-    console.log('server is listening 3000 port')
-})
-
-
-app.use(function(err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  res.status(err.status || 500);
-  res.render('error');
-});
-
+const express = require('express')
+const app = express()
+const port = 3000
+app.get('/', (req, res) => res.send('Hello World!'))
+app.listen(process.env.PORT || port, () => console.log(`Example app listening`))
