@@ -1,29 +1,17 @@
 language: node_js
 node_js:
 - lts/*
-#before_script:
-#- npm install
+before_script:
+- npm install
 notifications:
   email:
     on_success: always
-# before_install:
-#   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-#   - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-#   - sudo apt-get update
-#   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
-#   - docker-compose --version
-#   - docker-compose pull
-#   - docker-compose build
-after_deploy:
-  - chmod a+x docker_install.sh
-  - ./docker_install.sh
-deploy:
-  provider: heroku
-  api_key:
-    secure: bzQi27U8Ge4ExwK9vSA3hZ8eV4+LTysJbGw7AN72wPGo6mnqHIcmY4C9Y14AT98tdnQsZ8L9S5lOYDW6fAzrYSyIF2rXOS6t1CypVRi6K6eSwoL9qbRRiQgztZK1pL1oIEV220Vhxxs4zjuyQCCGOIsRuGWBxizoYn6pv1z5zY1Sw51rf8Wd+6TfbAcjglUPL2dYPgXPAOb4sfqWNj5Enu9dCSb7Yl8EPZGcHLyXBpfxWMYUjPLNSNdaMh4Na5P/UQfhzZD8rJtsWiqFpQUoX1lGy5BhSz7IBUdaGJIh8T6swf6d+omF60FQNEY/UjXAxatDxnSnjVfsrNnzJkmkdxxAh2gZK38Y6lM/HgxrOxefK5rAFgGK+Q7P1zCMTx1YW5dHIhv/Fx+6n9HypZ5p0Y+mNaPAmQnCjk7JKZd/NFXlWOmBlTGVcgJtVgFP/w8Wpeunw3kMAw8hgSIjxvByUweNW2HSOvTPAOQgJk4C+K4aI7L/BXU5d8hH2NnqW6UOaD8hjhIw6zTZkZs5ckiKjKzJoMllxK4gRBN8MAbCFzveGP2pvNA4Fz+WMuRHt9iKor2dWIAQ+dPRiLl4ZjeqBFpP8hknRrlK52jfirhZcV3bfEUmJuc9e8oim0Hcgd/GMeRMR0pEI8lc5FFQJMg6Sdayi4RJd+ageh2O1qavxZU=
-  skip_cleanup: true
-  app: sjk5766-travis
-#  run: "docker-compose up -d"
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: bzQi27U8Ge4ExwK9vSA3hZ8eV4+LTysJbGw7AN72wPGo6mnqHIcmY4C9Y14AT98tdnQsZ8L9S5lOYDW6fAzrYSyIF2rXOS6t1CypVRi6K6eSwoL9qbRRiQgztZK1pL1oIEV220Vhxxs4zjuyQCCGOIsRuGWBxizoYn6pv1z5zY1Sw51rf8Wd+6TfbAcjglUPL2dYPgXPAOb4sfqWNj5Enu9dCSb7Yl8EPZGcHLyXBpfxWMYUjPLNSNdaMh4Na5P/UQfhzZD8rJtsWiqFpQUoX1lGy5BhSz7IBUdaGJIh8T6swf6d+omF60FQNEY/UjXAxatDxnSnjVfsrNnzJkmkdxxAh2gZK38Y6lM/HgxrOxefK5rAFgGK+Q7P1zCMTx1YW5dHIhv/Fx+6n9HypZ5p0Y+mNaPAmQnCjk7JKZd/NFXlWOmBlTGVcgJtVgFP/w8Wpeunw3kMAw8hgSIjxvByUweNW2HSOvTPAOQgJk4C+K4aI7L/BXU5d8hH2NnqW6UOaD8hjhIw6zTZkZs5ckiKjKzJoMllxK4gRBN8MAbCFzveGP2pvNA4Fz+WMuRHt9iKor2dWIAQ+dPRiLl4ZjeqBFpP8hknRrlK52jfirhZcV3bfEUmJuc9e8oim0Hcgd/GMeRMR0pEI8lc5FFQJMg6Sdayi4RJd+ageh2O1qavxZU=
+#   skip_cleanup: true
+#   app: sjk5766-travis
 # env:
 #   global:
 #   - DOCKER_USER=sjk5766
