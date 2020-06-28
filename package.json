@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "exit",
+    "start": "docker-compose up -d",
     "test": "exit"
   },
   "dependencies": {
